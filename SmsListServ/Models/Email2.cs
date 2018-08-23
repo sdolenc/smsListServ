@@ -4,7 +4,7 @@ namespace Models.Email2
     using System;
     using Newtonsoft.Json;
 
-    public partial class Welcome
+    public partial class Root
     {
         [JsonProperty("uri")]
         public string Uri { get; set; }
