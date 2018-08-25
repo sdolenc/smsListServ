@@ -1,4 +1,6 @@
-
+using System;
+using System.Net;
+using System.Net.Mail;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
