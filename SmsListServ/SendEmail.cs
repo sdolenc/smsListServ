@@ -33,7 +33,39 @@ namespace SmsListServ
         //todo:
         public static void SendEmail_Impl()
         {
-            return;
+            //todo: precondition
+            //var pass = keyvault[todo@fromParam];
+
+            try
+            {
+                var client = new SmtpClient()
+                {
+                    Port = 587,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Host = "smtp.gmail.com",
+                    EnableSsl = true,
+                    Credentials = new NetworkCredential("todo@fromParam", "pass")
+                };
+
+                var msg = new MailMessage()
+                {
+                    From = new MailAddress("todo@fromParam"),
+                    // Subject = "Test email.", does it default to empty string?
+                    Body = "todoMessageParam",
+                    IsBodyHtml = false
+                    //todo: attachments
+                };
+
+                // todo: loop
+                msg.To.Add(new MailAddress("todo@toParam.com"));
+                client.Send(msg);
+            }
+            catch (Exception e)
+            {
+                //todo: jsonify object and return it w/ 500 error code
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
