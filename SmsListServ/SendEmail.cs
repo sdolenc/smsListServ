@@ -30,7 +30,7 @@ namespace SmsListServ
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
 
-        //todo:
+        //todo:implement echo, but annotate w/ todos
         public static void SendEmail_Impl()
         {
             //todo: precondition
