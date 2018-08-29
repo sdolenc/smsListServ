@@ -31,8 +31,9 @@ namespace SmsListServ
         }
 
         //todo:implement echo, but annotate w/ todos
-        public static void SendEmail_Impl()
+        public static void SendEmail_Impl(string from)
         {
+            var pass = Environment.GetEnvironmentVariable(from);
             //todo: precondition
             //var pass = keyvault[todo@fromParam];
 
