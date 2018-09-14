@@ -1,16 +1,16 @@
-using System;
-using System.Net;
-using System.Net.Mail;
-using System.IO;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Azure.WebJobs.Host;
-using Newtonsoft.Json;
-
 namespace SmsListServ
 {
+    using System;
+    using System.Net;
+    using System.Net.Mail;
+    using System.IO;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Azure.WebJobs;
+    using Microsoft.Azure.WebJobs.Extensions.Http;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.Azure.WebJobs.Host;
+    using Newtonsoft.Json;
+
     public static class SendEmail
     {
         //todo:
@@ -31,9 +31,9 @@ namespace SmsListServ
         }
 
         //todo:implement echo, but annotate w/ todos
-        public static void SendEmail_Impl(string from)
+        public static void SendEmail_Impl(Models.Email2.Body emailData)
         {
-            var pass = Environment.GetEnvironmentVariable(from);
+            var pass = Environment.GetEnvironmentVariable(emailData.From);
             //todo: precondition
             //var pass = keyvault[todo@fromParam];
 

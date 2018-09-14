@@ -34,8 +34,15 @@ namespace Models.Email2
         public long Size { get; set; }
     }
 
-public partial class Body
+    public partial class Body
     {
+        public void Flip()
+        {
+            var origFrom = From;
+            From = To;
+            To = origFrom;
+        }
+
         [JsonProperty("MultipleEmailsFound")]
         public bool MultipleEmailsFound { get; set; }
 
