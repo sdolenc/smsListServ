@@ -1,4 +1,4 @@
-﻿// quicktype
+﻿// quicktype!
 namespace Models.Email2
 {
     using System;
